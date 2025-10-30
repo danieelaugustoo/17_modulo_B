@@ -136,3 +136,29 @@ input[type="radio"] {
 #slide3-radio:checked ~ .carousel-nav-manual .next[for="slide1-radio"] {
   display: block;
 }
+@keyframes autoSlide {
+  0%,
+  25% {
+    transform: translateX(0%);
+  }
+  30%,
+  55% {
+    transform: translateX(-100%);
+  }
+  60%,
+  85% {
+    transform: translateX(-200%);
+  }
+  90%,
+  100% {
+    transform: translateX(0%);
+  }
+}
+.slide {
+  animation: autoSlide 9s infinite;
+}
+#slide1-radio:checked ~ .auto-scroll-container .carousel-wrapper,
+#slide2-radio:checked ~ .auto-scroll-container .carousel-wrapper,
+#slide3-radio:checked ~ .auto-scroll-container .carousel-wrapper {
+  animation: none;
+}
